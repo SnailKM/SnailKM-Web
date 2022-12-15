@@ -2,7 +2,7 @@ import {ConfigurePane} from '../components/panes/configure';
 import {Debug} from '../components/panes/debug';
 import {DesignTab} from '../components/panes/design';
 import {Settings} from '../components/panes/settings';
-import {Test} from '../components/panes/test';
+// import {Test} from '../components/panes/deprecated-test';
 
 export default [
   {
