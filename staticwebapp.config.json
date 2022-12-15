@@ -1,0 +1,30 @@
+{
+  "routes": [
+    {
+      "route": "/api/*",
+      "methods": ["POST"],
+      "allowedRoles": ["anonymous"]
+    },
+    {
+      "route": "/css/*",
+      "headers": {
+        "cache-control": "public, max-age=18144000"
+      }
+    },
+    {
+      "route": "/fonts/*",
+      "headers": {
+        "cache-control": "public, max-age=18144000"
+      }
+    },
+    {
+      "route": "/js/*",
+      "headers": {
+        "cache-control": "public, max-age=18144000"
+      }
+    }
+  ],
+  "platform": {
+    "apiRuntime": "node:16"
+  }
+}

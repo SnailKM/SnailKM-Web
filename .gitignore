@@ -1,0 +1,6 @@
+.DS_STORE
+.snowpack
+build
+node_modules
+public/definitions
+
