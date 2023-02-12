@@ -7,11 +7,11 @@ import {ControlRow, Label, Detail} from '../../grid';
 import type {
   VIADefinitionV2,
   VIADefinitionV3,
-  VIAItem,
-  VIAControlItem,
+  VIAItem
 } from '@the-via/reader';
 import type {LightingData} from '../../../../types/types';
 import {ArrayColorPicker} from '../../../inputs/color-picker';
+import {shiftFrom16Bit, shiftTo16Bit} from 'src/utils/keyboard-api';
 
 type Props = {
   lightingData: LightingData;
@@ -30,7 +30,7 @@ export type ControlMeta = [
 type AdvancedControlProps = Props & {meta: ControlMeta};
 
 export const VIACustomItem = React.memo(
-  (props: VIAItem & {updateValue: any; value: number[]; _id: string}) => (
+  (props: VIACustomControlProps & { _id: string}) => (
     <ControlRow id={props._id}>
       <Label>{props.label}</Label>
       <Detail>
@@ -49,7 +49,7 @@ type ControlGetSet = {
   updateValue: (name: string, ...command: number[]) => void;
 };
 
-type VIACustomControlProps = VIAControlItem & ControlGetSet;
+type VIACustomControlProps = VIAItem & ControlGetSet;
 
 const boxOrArr = <N extends any>(elem: N | N[]) =>
   Array.isArray(elem) ? elem : [elem];
@@ -57,6 +57,22 @@ const boxOrArr = <N extends any>(elem: N | N[]) =>
 // we can compare value against option[1], that way corrupted values are false
 const valueIsChecked = (option: number | number[], value: number[]) =>
   boxOrArr(option).every((o, i) => o == value[i]);
+
+const getRangeValue = (value: number[], max: number) => {
+  if (max > 255) {
+    return shiftTo16Bit([value[0], value[1]]);
+  } else {
+    return value[0];
+  }
+};
+
+const getRangeBytes = (value: number, max: number) => {
+  if (max > 255) {
+    return shiftFrom16Bit(value);
+  } else {
+    return [value];
+  }
+};
 
 export const VIACustomControl = (props: VIACustomControlProps) => {
   const {content, type, options, value} = props as any;
@@ -67,17 +83,25 @@ export const VIACustomControl = (props: VIACustomControlProps) => {
         <AccentRange
           min={options[0]}
           max={options[1]}
-          defaultValue={props.value[0]}
-          onChange={(val: number) => props.updateValue(name, ...command, val)}
+          defaultValue={getRangeValue(props.value, options[1])}
+          onChange={(val: number) =>
+            props.updateValue(
+              name,
+              ...command,
+              ...getRangeBytes(val, options[1]),
+            )
+          }
         />
       );
     }
     case 'keycode': {
       return (
         <PelpiKeycodeInput
-          value={props.value[0]}
+          value={shiftTo16Bit([props.value[0], props.value[1]])}
           meta={{}}
-          setValue={(val: number) => props.updateValue(name, ...command, val)}
+          setValue={(val: number) =>
+            props.updateValue(name, ...command, ...shiftFrom16Bit(val))
+          }
         />
       );
     }

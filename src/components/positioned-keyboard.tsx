@@ -4,8 +4,8 @@ import styled from 'styled-components';
 import partition from 'lodash.partition';
 import {
   getLabelForByte,
-  isUserKeycodeByte,
-  getUserKeycodeIndex,
+  isCustomKeycodeByte,
+  getCustomKeycodeIndex,
   isAlpha,
   isNumericSymbol,
   isNumericOrShiftedSymbol,
@@ -406,12 +406,14 @@ export const getLabel = (
 ) => {
   let label: string = '';
   if (
-    isUserKeycodeByte(keycodeByte, basicKeyToByte) &&
-    selectedDefinition?.customKeycodes
+    isCustomKeycodeByte(keycodeByte, basicKeyToByte) &&
+    selectedDefinition?.customKeycodes?.at(
+      getCustomKeycodeIndex(keycodeByte, basicKeyToByte),
+    ) !== undefined
   ) {
-    const userKeycodeIdx = getUserKeycodeIndex(keycodeByte, basicKeyToByte);
+    const customKeycodeIdx = getCustomKeycodeIndex(keycodeByte, basicKeyToByte);
     label = getShortNameForKeycode(
-      selectedDefinition.customKeycodes[userKeycodeIdx] as IKeycode,
+      selectedDefinition.customKeycodes[customKeycodeIdx] as IKeycode,
     );
   } else if (keycodeByte) {
     label =
