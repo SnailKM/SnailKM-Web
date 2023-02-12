@@ -51,15 +51,6 @@ export const Settings = () => {
       <OverflowCell>
         <Container>
           <ControlRow>
-            <Label>Show Design tab</Label>
-            <Detail>
-              <AccentSlider
-                onChange={() => dispatch(toggleCreatorMode())}
-                isChecked={showDesignTab}
-              />
-            </Detail>
-          </ControlRow>
-          <ControlRow>
             <Label>Fast Key Mapping</Label>
             <Detail>
               <AccentSlider

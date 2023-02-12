@@ -11,12 +11,12 @@ export default [
     title: 'Configure',
     path: '/',
   },
-  // {
-  //  key: 'test',
-  //  component: Test,
-  //   path: '/test',
-  //  title: 'Key Tester',
-  // },
+   {
+    key: 'test',
+    component: Test,
+     path: '/test',
+    title: 'Key Tester',
+  },
   {
     key: 'design',
     component: DesignTab,
