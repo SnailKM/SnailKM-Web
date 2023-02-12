@@ -41,6 +41,135 @@ const TestPane = styled(Pane)`
   flex-direction: column;
 `;
 
+export function getIndexByEvent(evt: KeyboardEvent): number {
+  const code = evt.code;
+  const byte =
+    evtToKeyByte[code as keyof typeof evtToKeyByte] ||
+    evtToKeyByte[evt.key as keyof typeof evtToKeyByte];
+  if (byte) {
+    return matrixKeycodes.indexOf(byte);
+  }
+  return -1;
+}
+
+export const matrixKeycodes = [
+  // Row 0
+  basicKeyToByte.KC_ESC,
+  basicKeyToByte.KC_F1,
+  basicKeyToByte.KC_F2,
+  basicKeyToByte.KC_F3,
+  basicKeyToByte.KC_F4,
+  basicKeyToByte.KC_F5,
+  basicKeyToByte.KC_F6,
+  basicKeyToByte.KC_F7,
+  basicKeyToByte.KC_F8,
+  basicKeyToByte.KC_F9,
+  basicKeyToByte.KC_F10,
+  basicKeyToByte.KC_F11,
+  basicKeyToByte.KC_F12,
+  basicKeyToByte.KC_PSCR,
+  basicKeyToByte.KC_SLCK,
+  basicKeyToByte.KC_PAUS,
+  basicKeyToByte.KC_SLEP,
+  basicKeyToByte.KC_MUTE,
+  basicKeyToByte.KC_VOLD,
+  basicKeyToByte.KC_VOLU,
+  // Row 1
+  basicKeyToByte.KC_GRV,
+  basicKeyToByte.KC_1,
+  basicKeyToByte.KC_2,
+  basicKeyToByte.KC_3,
+  basicKeyToByte.KC_4,
+  basicKeyToByte.KC_5,
+  basicKeyToByte.KC_6,
+  basicKeyToByte.KC_7,
+  basicKeyToByte.KC_8,
+  basicKeyToByte.KC_9,
+  basicKeyToByte.KC_0,
+  basicKeyToByte.KC_MINS,
+  basicKeyToByte.KC_EQL,
+  basicKeyToByte.KC_BSPC,
+  basicKeyToByte.KC_INS,
+  basicKeyToByte.KC_HOME,
+  basicKeyToByte.KC_PGUP,
+  basicKeyToByte.KC_NLCK,
+  basicKeyToByte.KC_PSLS,
+  basicKeyToByte.KC_PAST,
+  basicKeyToByte.KC_PMNS,
+  // Row 2
+  basicKeyToByte.KC_TAB,
+  basicKeyToByte.KC_Q,
+  basicKeyToByte.KC_W,
+  basicKeyToByte.KC_E,
+  basicKeyToByte.KC_R,
+  basicKeyToByte.KC_T,
+  basicKeyToByte.KC_Y,
+  basicKeyToByte.KC_U,
+  basicKeyToByte.KC_I,
+  basicKeyToByte.KC_O,
+  basicKeyToByte.KC_P,
+  basicKeyToByte.KC_LBRC,
+  basicKeyToByte.KC_RBRC,
+  basicKeyToByte.KC_BSLS,
+  basicKeyToByte.KC_DEL,
+  basicKeyToByte.KC_END,
+  basicKeyToByte.KC_PGDN,
+  basicKeyToByte.KC_P7,
+  basicKeyToByte.KC_P8,
+  basicKeyToByte.KC_P9,
+  basicKeyToByte.KC_PPLS,
+  // Row 3
+  basicKeyToByte.KC_CAPS,
+  basicKeyToByte.KC_A,
+  basicKeyToByte.KC_S,
+  basicKeyToByte.KC_D,
+  basicKeyToByte.KC_F,
+  basicKeyToByte.KC_G,
+  basicKeyToByte.KC_H,
+  basicKeyToByte.KC_J,
+  basicKeyToByte.KC_K,
+  basicKeyToByte.KC_L,
+  basicKeyToByte.KC_SCLN,
+  basicKeyToByte.KC_QUOT,
+  basicKeyToByte.KC_ENT,
+  basicKeyToByte.KC_P4,
+  basicKeyToByte.KC_P5,
+  basicKeyToByte.KC_P6,
+  // Row 4
+  basicKeyToByte.KC_LSFT,
+  basicKeyToByte.KC_Z,
+  basicKeyToByte.KC_X,
+  basicKeyToByte.KC_C,
+  basicKeyToByte.KC_V,
+  basicKeyToByte.KC_B,
+  basicKeyToByte.KC_N,
+  basicKeyToByte.KC_M,
+  basicKeyToByte.KC_COMM,
+  basicKeyToByte.KC_DOT,
+  basicKeyToByte.KC_SLSH,
+  basicKeyToByte.KC_RSFT,
+  basicKeyToByte.KC_UP,
+  basicKeyToByte.KC_P1,
+  basicKeyToByte.KC_P2,
+  basicKeyToByte.KC_P3,
+  basicKeyToByte.KC_PENT,
+  // Row 5
+  basicKeyToByte.KC_LCTL,
+  basicKeyToByte.KC_LGUI,
+  basicKeyToByte.KC_LALT,
+  basicKeyToByte.KC_SPC,
+  basicKeyToByte.KC_RALT,
+  basicKeyToByte.KC_RGUI,
+  basicKeyToByte.KC_MENU,
+  basicKeyToByte.KC_RCTL,
+  basicKeyToByte.KC_LEFT,
+  basicKeyToByte.KC_DOWN,
+  basicKeyToByte.KC_RGHT,
+  basicKeyToByte.KC_P0,
+  basicKeyToByte.KC_PDOT,
+];
+
+
 let startTest = false;
 
 const invertTestKeyState = (s: TestKeyState) =>
