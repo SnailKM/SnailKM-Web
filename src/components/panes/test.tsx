@@ -1,5 +1,6 @@
 import React, {useState, useEffect, useRef, FC} from 'react';
 import fullKeyboardDefinition from '../../utils/test-keyboard-definition.json';
+import basicKeyToByte from '../../utils/key-to-byte/default';
 import {Pane} from './pane';
 import styled from 'styled-components';
 import {PROTOCOL_GAMMA, KeyboardValue} from '../../utils/keyboard-api';
