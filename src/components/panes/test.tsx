@@ -466,8 +466,8 @@ export const Test: FC = () => {
                 <AccentButton onClick={onClickHandler}>Reset</AccentButton>
               </Detail>
             </ControlRow>
-            {canUseMatrixState && selectedDefinition ? (
-              {/*<ControlRow>
+            {/*{canUseMatrixState && selectedDefinition ? (
+              <ControlRow>
                 <Label>Test Matrix</Label>
                 <Detail>
                   <AccentSlider
@@ -486,8 +486,8 @@ export const Test: FC = () => {
                     }}
                   />
                 </Detail>
-              </ControlRow>*/}
-            ) : null}
+              </ControlRow>
+            ) : null}*/}
           </Container>
         </OverflowCell>
       </Grid1Col>
