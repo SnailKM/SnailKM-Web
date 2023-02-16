@@ -3,4 +3,3 @@
 build
 node_modules
 public/definitions
-yarn.lock
