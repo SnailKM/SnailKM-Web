@@ -13,7 +13,7 @@ export type SettingsState = Settings & {
 
 const initialState: SettingsState = {
   ...getSettings(),
-  isTestMatrixEnabled: false,
+  isTestMatrixEnabled: true,
   restartRequired: false,
   allowGlobalHotKeys: false,
 };

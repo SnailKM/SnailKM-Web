@@ -463,7 +463,7 @@ export const Test: FC = () => {
             <ControlRow>
               <Label>Reset Keyboard</Label>
               <Detail>
-                <AccentButton onClick={onClickHandler}>Reset</AccentButton>
+                {/*<AccentButton onClick={onClickHandler}>Reset</AccentButton>*/}
               </Detail>
             </ControlRow>
             {canUseMatrixState && selectedDefinition ? (
