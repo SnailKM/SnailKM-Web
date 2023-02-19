@@ -3,3 +3,5 @@
 build
 node_modules
 public/definitions
+package-lock.json
+.yarn
