@@ -3,5 +3,9 @@
 build
 node_modules
 public/definitions
+<<<<<<< HEAD
 package-lock.json
 .yarn
+=======
+dist
+>>>>>>> 06a2428 (Update .gitignore)
