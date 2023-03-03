@@ -1,11 +1,17 @@
 .DS_STORE
+.env
 .snowpack
 build
 node_modules
 public/definitions
+<<<<<<< HEAD
 <<<<<<< HEAD
 package-lock.json
 .yarn
 =======
 dist
 >>>>>>> 06a2428 (Update .gitignore)
+=======
+dist
+dist-ssr
+>>>>>>> cbb32d7 (Fiber 🚧🚧🚧🚧🚧 (#71))
