@@ -114,12 +114,6 @@ const KeycodeDesc = styled.div`
   }
 `;
 
-const Link = styled.a`
-  font-size: 16x !important;
-  color: var(--color_accent);
-  text-decoration: underline;
-`;
-
 const generateKeycodeCategories = (basicKeyToByte: Record<string, number>) =>
   getKeycodes().concat(getOtherMenu(basicKeyToByte));
 
@@ -208,9 +202,9 @@ export const KeycodePane: FC = () => {
     return (
       <ErrorMessage>
         It looks like your current firmware doesn't support macros.{' '}
-        <Link href="https://docs.snaildos.com" target="_blank">
+        {/* <a href="https://docs.snaildos.com" target="_blank">
           How do I update my firmware?
-        </Link>
+        </a> */}
       </ErrorMessage>
     );
   };
