@@ -166,7 +166,7 @@ const Loader: React.FC<{
   }, [selectedDefinition]);
   return (
     <LoaderPane>
-      {<ChippyLoader theme={theme} progress={loadProgress || null} />}
+      <h1> something something </h1>
       {(showButton || noConnectedDevices) && !noSupportedIds && !isElectron ? (
         <AccentButtonLarge onClick={() => dispatch(reloadConnectedDevices())}>
           Authorize device

@@ -6,8 +6,8 @@ const LoadingText = styled.div`
 `;
 
 enum LoadingLabel {
-  Searching = 'Searching for devices...',
-  Loading = 'Loading...',
+  Searching = 'Searching for SnailKM products...',
+  Loading = 'Connecting...',
 }
 
 type Props = {
