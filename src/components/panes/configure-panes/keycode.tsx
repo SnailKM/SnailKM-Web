@@ -207,9 +207,6 @@ export const KeycodePane: FC = () => {
     return (
       <ErrorMessage>
         It looks like your current firmware doesn't support macros.{' '}
-        {/* <a href="https://docs.snaildos.com" target="_blank">
-          How do I update my firmware?
-        </a> */}
       </ErrorMessage>
     );
   };
