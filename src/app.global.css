@@ -52,14 +52,11 @@ a:hover {
   cursor: pointer;
 }
 :root {
-<<<<<<< HEAD
   --color_accent: #4b4dcc;
   --color_dark-accent: #2f507c;
-=======
-  --color_error: #d15e5e;
->>>>>>> cbb32d7 (Fiber 🚧🚧🚧🚧🚧 (#71))
   --color_light-grey: #d9d9d9;
   --color_medium-grey: #707070;
+  --color_error: #d15e5e;
 
   --color_dark-grey: #414141;
   --color_light-jet: #222;
