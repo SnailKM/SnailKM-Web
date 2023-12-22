@@ -102,7 +102,7 @@ export const Settings = () => {
         </MenuCell>
         <SpanOverflowCell style={{flex: 1, borderWidth: 0}}>
           <Container>
-            <ControlRow>
+            {/*<ControlRow>
               <Label>Show Design tab</Label>
               <Detail>
                 <AccentSlider
@@ -110,7 +110,7 @@ export const Settings = () => {
                   isChecked={showDesignTab}
                 />
               </Detail>
-            </ControlRow>
+            </ControlRow>*/}
             <ControlRow>
               <Label>Fast Key Mapping</Label>
               <Detail>
@@ -120,15 +120,15 @@ export const Settings = () => {
                 />
               </Detail>
             </ControlRow>
-            <ControlRow>
-              <Label>Light Mode</Label>
+            {/*<ControlRow>
+            <Label>Light Mode</Label>
               <Detail>
                 <AccentSlider
                   onChange={() => dispatch(toggleThemeMode())}
                   isChecked={themeMode === 'light'}
                 />
               </Detail>
-            </ControlRow>
+            </ControlRow>*/}
             <ControlRow>
               <Label>Keycap Theme</Label>
               <Detail>

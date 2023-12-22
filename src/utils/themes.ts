@@ -9,6 +9,20 @@ export type Theme = {
 
 export const THEMES = {
   ...{
+    SNAILKM: {
+      alpha: {
+        c: '#343436',
+        t: '#9388e3',
+      },
+      mod: {
+        c: '#363434',
+        t: '#7c67cf',
+      },
+      accent: {
+        c: '#c1b8e8',
+        t: '#363434',
+      },
+    },
     OLIVIA_DARK: {
       alpha: {
         c: '#363434',

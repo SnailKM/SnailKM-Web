@@ -275,6 +275,9 @@ export const Test = (props: {dimensions?: DOMRect; nDimension: NDimension}) => {
     if (path !== '/') {
       dispatch(setLayer(0));
     }
+    if (path == '/test') {
+      dispatch(setTestMatrixEnabled(true));
+    }
   }, [path]); // Empty array ensures that effect is only run on mount and unmount
 
   const matrixPressedKeysMapped =
