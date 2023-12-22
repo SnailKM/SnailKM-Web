@@ -16,11 +16,7 @@ Builds a static copy of your site to the `build/` folder.
 Your app is ready to be deployed!
 
 
-<<<<<<< HEAD
 ### yarn test
-=======
-### `npm run test`
->>>>>>> da5fe16 (Update README.md)
 
 Launches the application test runner.
 Run with the `--watch` flag (`npm test -- --watch`) to run in interactive watch mode.
