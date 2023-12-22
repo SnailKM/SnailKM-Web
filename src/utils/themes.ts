@@ -290,36 +290,5 @@ export const THEMES = {
       },
     },
   },
-<<<<<<< HEAD
-  OLIVIA: {
-    alphas: {
-      c: '#f0f0f0',
-      t: '#363434'
-    },
-    mods: {
-      c: '#363434',
-      t: '#133cad'
-    },
-    accents: {
-      c: '#133cad',
-      t: '#363434'
-    }
-  },
-  OLIVIA_DARK: {
-    alphas: {
-      c: '#363434',
-      t: '#133cad'
-    },
-    mods: {
-      c: '#363434',
-      t: '#133cad'
-    },
-    accents: {
-      c: '#133cad',
-      t: '#363434'
-    }
-  }
-=======
   ...REMOTETHEMES,
->>>>>>> cbb32d7 (Fiber 🚧🚧🚧🚧🚧 (#71))
 };

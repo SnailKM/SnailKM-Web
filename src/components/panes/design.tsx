@@ -291,33 +291,6 @@ export const DesignTab: FC = () => {
             <FontAwesomeIcon icon={faUpload} />
           </UploadIcon>
         )}
-<<<<<<< HEAD
-      </FlexCell>
-      <OverflowCell>
-        <Container>
-          <ControlRow>
-            <Label>Load Draft Definition</Label>
-            <Detail>
-              <AccentUploadButton
-                onLoad={(file) =>
-                  importDefinition(file, definitionVersion, dispatch, setErrors)
-                }
-              >
-                Load
-              </AccentUploadButton>
-            </Detail>
-          </ControlRow>
-          <ControlRow>
-            <Label>Use V3 definitions (via/next)</Label>
-            <Detail>
-              <AccentSlider
-                isChecked={definitionVersion === 'v3'}
-                onChange={(val) => dispatch(selectVersion(val ? 'v3' : 'v2'))}
-              />
-            </Detail>
-          </ControlRow>
-          {definition && (
-=======
       </SinglePaneFlexCell>
       <Grid style={{overflow: 'hidden'}}>
         <MenuCell style={{pointerEvents: 'all'}}>
@@ -332,7 +305,6 @@ export const DesignTab: FC = () => {
         </MenuCell>
         <SpanOverflowCell>
           <Container>
->>>>>>> cbb32d7 (Fiber 🚧🚧🚧🚧🚧 (#71))
             <ControlRow>
               <Label>Load Draft Definition</Label>
               <Detail>

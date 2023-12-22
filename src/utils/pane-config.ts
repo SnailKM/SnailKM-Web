@@ -23,12 +23,8 @@ export default [
    {
     key: 'test',
     component: Test,
-<<<<<<< HEAD
-     path: '/test',
-=======
     icon: faStethoscope,
     path: '/test',
->>>>>>> cbb32d7 (Fiber 🚧🚧🚧🚧🚧 (#71))
     title: 'Key Tester',
   },
   {

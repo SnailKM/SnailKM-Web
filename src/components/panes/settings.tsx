@@ -64,23 +64,6 @@ export const Settings = () => {
 
   const [showDiagnostics, setShowDiagnostics] = useState(false);
 
-<<<<<<< HEAD
-  return (
-    <DebugPane>
-      <OverflowCell>
-        <Container>
-          <ControlRow>
-            <Label>Fast Key Mapping</Label>
-            <Detail>
-              <AccentSlider
-                onChange={() => dispatch(toggleFastRemap())}
-                isChecked={!disableFastRemap}
-              />
-            </Detail>
-          </ControlRow>
-          <ControlRow>
-            <Label>Show Diagnostic Information</Label>
-=======
   const themeSelectOptions = Object.keys(THEMES).map((k) => ({
     label: k.replaceAll('_', ' '),
     value: k,
@@ -88,7 +71,6 @@ export const Settings = () => {
   const themeDefaultValue = themeSelectOptions.find(
     (opt) => opt.value === themeName,
   );
->>>>>>> cbb32d7 (Fiber 🚧🚧🚧🚧🚧 (#71))
 
   const renderModeOptions = webGLIsAvailable
     ? [
