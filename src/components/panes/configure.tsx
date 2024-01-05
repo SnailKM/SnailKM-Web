@@ -41,6 +41,7 @@ import {isElectron} from 'src/utils/running-context';
 import {useAppDispatch} from 'src/store/hooks';
 import {MenuTooltip} from '../inputs/tooltip';
 import {getRenderMode, getSelectedTheme} from 'src/store/settingsSlice';
+import { Center } from '@react-three/drei';
 
 const MenuContainer = styled.div`
   padding: 15px 10px 20px 10px;
@@ -166,7 +167,10 @@ const Loader: React.FC<{
   }, [selectedDefinition]);
   return (
     <LoaderPane>
-      <h1> something something </h1>
+      <div><h1 style={{textAlign: 'center'}}>SnailKM</h1>
+      <img src="/snailkm.png" style={{
+        borderRadius: '20px'
+      }}></img></div>
       {(showButton || noConnectedDevices) && !noSupportedIds && !isElectron ? (
         <AccentButtonLarge onClick={() => dispatch(reloadConnectedDevices())}>
           Authorize device
