@@ -162,20 +162,7 @@ function importDefinitions(
                 : keyboardDefinitionV3ToVIADefinitionV3(res);
             return definition;
           } else {
-            errors = (
-              version === 'v2'
-                ? isKeyboardDefinitionV2.errors ||
-                  isVIADefinitionV2.errors ||
-                  []
-                : isKeyboardDefinitionV3.errors ||
-                  isVIADefinitionV3.errors ||
-                  []
-            ).map(
-              (e) =>
-                `${fileName} ${e.dataPath ? e.dataPath + ': ' : 'Object: '}${
-                  e.message
-                }`,
-            );
+            console.log('error')
           }
         } catch (err: any) {
           if (err.name) {
