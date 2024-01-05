@@ -12,14 +12,14 @@ export const errorsListenerMiddleware = createListenerMiddleware();
 errorsListenerMiddleware.startListening({
   actionCreator: logAppError,
   effect: async ({payload: {message, deviceInfo}}, listenerApi) => {
-    captureError(message, deviceInfo);
+    console.log(message, deviceInfo);
   },
 });
 
 errorsListenerMiddleware.startListening({
   actionCreator: logKeyboardAPIError,
   effect: async ({payload}, listenerApi) => {
-    captureError(
+    console.log(
       extractMessageFromKeyboardAPIError(payload),
       payload.deviceInfo,
     );
